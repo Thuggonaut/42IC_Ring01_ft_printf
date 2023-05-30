@@ -22,7 +22,7 @@ int	ft_putnbr_base(unsigned long long nb, const char *base) //Takes an unsigned 
 #1	Here's how the recursive call works to convert the number into the specified base:
 	Suppose we have the number nb = 42 and the base `base` = "0123456789ABCDEF", which represents a hexadecimal base (base 16):
 		- Initially, `nb` is greater than or equal to the length of the base (16 in this case), so the recursion starts.
-		- `nb` is divided by len using the / operator. The result of this division represents the quotient of the division:
+		- `nb` is divided by `len`. The result of this division represents the quotient of the division:
 		  In the first recursive call, `nb` is divided by 16. The quotient is `2` (integer division), and the remainder is 
 		  `10`.
 		- The recursive call `ft_putnbr_base(nb / len, base)` is made, passing the quotient as the new value for nb:
