@@ -19,7 +19,7 @@ SRC	=	$(addprefix $(SRC_DIR),	\
 		ft_handle_hex.c			\
 		ft_handle_percent.c)
 
-UTILS	=	$(addprefix $(UTILS_DIR),	\
+UTILS =	$(addprefix $(UTILS_DIR),	\
 		ft_strlen.c						\
 		ft_putchar.c					\
 		ft_putnbr_base.c)
