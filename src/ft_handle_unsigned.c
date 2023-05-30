@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_handle_uns(va_list ap)
+int	ft_handle_unsigned(va_list ap)
 {
 	unsigned int	n;
 
