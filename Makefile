@@ -9,7 +9,7 @@ INC = -I$(INC_DIR)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror $(INC)
 
-SRC	=	$(addprefix $(SRC_DIR),	\
+SRC =	$(addprefix $(SRC_DIR),	\
 		ft_printf.c		\
 		ft_handle_char.c	\
 		ft_handle_str.c		\
