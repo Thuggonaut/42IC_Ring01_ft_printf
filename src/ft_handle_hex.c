@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_handle_hexlower(va_list ap)
+int	ft_handle_hexlower(va_list ap) //`ap` is a `va_list` pointer that is passed as an argument. Inside the function, this pointer is used to access the variable arguments
 {
 	unsigned int	n;
 
