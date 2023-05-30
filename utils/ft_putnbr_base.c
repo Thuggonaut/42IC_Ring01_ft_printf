@@ -31,7 +31,7 @@ int	ft_putnbr_base(unsigned long long nb, const char *base) //Takes an unsigned 
 		  stops, and the function starts returning back:
 		  Now, `nb = 2` is less than the length of the base, so the recursion stops, and the function starts returning back.
 
-#2	Here's how the characters int the base is printed:
+#2	Here's how the characters in the base is printed:
 		- After the recursive call `ft_putnbr_base(nb / len, base)`, the remainder of `nb / len` is obtained using the modulus 
 		  operator `%` (`nb % len`). This remainder represents the index of the character in the base that corresponds to the 
 		  current digit being converted.
