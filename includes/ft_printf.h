@@ -15,7 +15,7 @@ int		ft_handle_pointer(va_list ap);
 int		ft_handle_hexlower(va_list ap);
 int		ft_handle_hexupper(va_list ap);
 int	      ft_handle_percent(void);
-size_t	    ft_strlen(const char *s);
+size_t	  ft_strlen(const char *s);
 int		ft_putchar(char c);
 int		ft_putnbr_base(unsigned long long nb, const char *base);
 
