@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_handle_str(va_list ap)
+int	ft_handle_string(va_list ap)
 {
 	char	*s;
 	int		i;
