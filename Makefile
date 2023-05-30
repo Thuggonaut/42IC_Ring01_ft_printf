@@ -20,8 +20,8 @@ SRC	=	$(addprefix $(SRC_DIR),	\
 		ft_handle_percent.c)
 
 UTILS =	$(addprefix $(UTILS_DIR),	\
-		ft_strlen.c						\
-		ft_putchar.c					\
+		ft_strlen.c					\
+		ft_putchar.c				\
 		ft_putnbr_base.c)
 
 OBJ = $(SRC:.c=.o)
