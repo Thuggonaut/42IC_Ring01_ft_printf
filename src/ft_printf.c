@@ -5,11 +5,11 @@ static int	ft_specifier(char c, va_list ap)
 	if (c == 'c')
 		return (ft_handle_char(ap));
 	if (c == 's')
-		return (ft_handle_str(ap));
+		return (ft_handle_string(ap));
 	if (c == 'i' || c == 'd')
 		return (ft_handle_int(ap));
 	if (c == 'u')
-		return (ft_handle_uns(ap));
+		return (ft_handle_unsigned(ap));
 	if (c == 'p')
 		return (ft_handle_pointer(ap));
 	if (c == 'x')
