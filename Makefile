@@ -1,6 +1,13 @@
+NAME = libftprintf.a
+
 SRC_DIR	=	src/
 UTILS_DIR = utils/
 INC_DIR	=	inc/
+
+INC = -I$(INC_DIR)
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror $(INC)
 
 SRC	=	$(addprefix $(SRC_DIR),	\
 		ft_printf.c				\
@@ -22,14 +29,6 @@ OBJ = $(SRC:.c=.o)
 OBJ_UTILS = $(UTILS:.c=.o)
 
 AR = ar rcs
-
-CC = gcc
-
-INC = -I$(INC_DIR)
-
-CFLAGS = -Wall -Wextra -Werror $(INC)
-
-NAME = libftprintf.a
 
 all: $(NAME)
 
