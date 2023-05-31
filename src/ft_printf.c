@@ -25,22 +25,22 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		i;
-	int		cnt;
+	int		count;
 
 	if (!format)
 		return (0);
 	va_start(ap, format);
 	i = -1;
-	cnt = 0;
+	count = 0;
 	while (format[++i])
 	{
 		if (format[i] == '%' && !format[i + 1])
 			break ;
 		else if (format[i] == '%')
-			cnt += ft_specifier(format[++i], ap);
+			count += ft_specifier(format[++i], ap);
 		else
-			cnt += write(1, &format[i], 1);
+			count += write(1, &format[i], 1);
 	}
 	va_end(ap);
-	return (cnt);
+	return (count);
 }

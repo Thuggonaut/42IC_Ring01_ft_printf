@@ -2,7 +2,7 @@ NAME = libftprintf.a
 
 SRC_DIR	=	src/
 UTILS_DIR = 	utils/
-INC_DIR	=	inc/
+INC_DIR	=	includes/
 
 INC = -I$(INC_DIR)
 
@@ -12,9 +12,9 @@ CFLAGS = -Wall -Wextra -Werror $(INC)
 SRC =	$(addprefix $(SRC_DIR),	\
 		ft_printf.c		\
 		ft_handle_char.c	\
-		ft_handle_str.c		\
+		ft_handle_string.c		\
 		ft_handle_int.c		\
-		ft_handle_uns.c		\
+		ft_handle_unsined.c		\
 		ft_handle_pointer.c	\
 		ft_handle_hex.c		\
 		ft_handle_percent.c)
