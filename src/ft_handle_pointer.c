@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_handle_pointer(va_list ap) ////`ap` is a `va_list` pointer that is passed as an argument. Inside the function, this pointer is used to access the variable arguments
+int	ft_handle_pointer(va_list ap) //`ap` is a `va_list` pointer that is passed as an argument. Inside the function, this pointer is used to access the variable arguments
 {
 	void	*n; //To store the address of any data type. `void*` because he specific data type of the pointer is not known in advance
 
