@@ -18,7 +18,7 @@ int	ft_handle_pointer(va_list ap) //`ap` is a `va_list` pointer that is passed a
 		- The "0x" prefix indicates that the subsequent characters represent a hexadecimal value.
 
 	`write(1, "0x", 2);` writes the characters "0x" to the standard output (file descriptor 1). 
-		- `2` is the soecified number of character to write because "0x" is a string literal with two characters: '0' and 'x'. 
+		- `2` is the specified number of character to write because "0x" is a string literal with two characters: '0' and 'x'. 
 
 	By writing "0x" before printing the hexadecimal representation of a pointer, it helps convey that the following characters 
 	represent a memory address in hexadecimal format. 
