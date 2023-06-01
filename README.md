@@ -18,7 +18,7 @@
     - Step 10: Test the ft_printf() against the original printf
 
 ## Step 1: Learn the original prinft() function:
-
+ 
 
 
 4.	Structure:
