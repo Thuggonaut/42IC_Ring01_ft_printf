@@ -1,7 +1,9 @@
 # 42_IC_Ring01_ft_printf
 
 ## Preface:
-- This ft_print code is done without the bonus.
+- This ft_printf project is completed without the bonus.
+- The subject.pdf requires a recode of the printf() function from libc, without implementing the buffer management of the original printf().
+- Our ft_printf.c must handle the following conversions: c, s, p, d, i, u, x, X, %.
 - The following consists of how I tackled this project, which includes drafting a plan about what I needed to learn, and how I could start. 
 - Notes are included.
 
