@@ -1,21 +1,21 @@
 # 42_IC_Ring01_ft_printf
 
 ## Preface:
-    - This ft_print code is done without the bonus.
-    - The following consists of how I tackled this project, which includes drafting a plan about what I needed to learn, and how I could start. 
-    - Notes are included.
+- This ft_print code is done without the bonus.
+- The following consists of how I tackled this project, which includes drafting a plan about what I needed to learn, and how I could start. 
+- Notes are included.
 
 ## Outline of the Plan:
-    - Step 1: Learn the original prinft() function
-    - Step 2: Learn about Variadic functions
-    - Step 3: Write the structure of directories/source files (tree)
-    - Step 4: Create the directories
-    - Step 5: Write the ft_printf.h header file
-    - Step 6: Write the conversion and utility (helper functions) source files
-    - Step 7: Write the ft_printf.c source file
-    - Step 8: Write the Makefile
-    - Step 9: Compile the library of ft_printf
-    - Step 10: Test the ft_printf() against the original printf
+- Step 1: Learn the original prinft() function
+- Step 2: Learn about Variadic functions
+- Step 3: Write the structure of directories/source files (tree)
+- Step 4: Create the directories
+- Step 5: Write the ft_printf.h header file
+- Step 6: Write the conversion and utility (helper functions) source files
+- Step 7: Write the ft_printf.c source file
+- Step 8: Write the Makefile
+- Step 9: Compile the library of ft_printf
+- Step 10: Test the ft_printf() against the original printf
 
 ## Step 1: Learn the original prinft() function:
  
