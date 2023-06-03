@@ -51,7 +51,7 @@
 
 
 🔸 **stdarg.h header file**
-1. Provides a set of maros and data types that allow you to work with variable-length argument lists.
+1. Provides a set of macros and data types that allow you to work with variable-length argument lists.
     - A variable argument list is a mechanism that alows a function to accept a variable number of arguments of different types. 
 2. A variable argument list is declared using the elipsis `...` as the last parameter in the function prototype, and indicates that a variable number of arguments of any type, will be accepted.
 3. In a function with variable-length arguments, the number and types of arguments are not known at compile time, so they're unable to be explicitly declared. 
