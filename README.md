@@ -27,18 +27,20 @@
 
     `int printf(const char  *format, ...);`
 
-4. `printf()` returns an ***'int'*** value representing the number of characters printed (excluding the null terminator). It returns a negative value if an error occurs <sub>Note: My ft_printf() did not account for this</sub>.
+4. `printf()` returns an ***'int'*** value representing the number of characters printed (excluding the null terminator). It returns a negative value if an error occurs. <sub>Note: My ft_printf() did not account for this</sub>
     - `const char  *format` is a pointer to a ***'format string'*** specifying the format of the output. 
         - The ***'format string'*** contains placeholders (% specifiers) that are replaced by the corresponding values specified in subsequent arguments.
         - The ***'%'*** placeholders are followed by a format specifier character, specifying the type of the argument to be printed.
             - For example, `%c` for character, `%i` for int, and `%s` for string.
-            - `%` means, "colloquially plug in some value here.
-            - If your ***'format string'*** has two or more `%`s, it'll plug the first variable argument into the first `%`, then the second variable argument to the second `%`, and so on and so forth, in a left --> right order of operations.
+            - `%` means, "colloquially plug in some value here".
+            - If your ***'format string'*** has two or more `%` placeholders, it'll plug the first variable argument into the first `%`, then the second variable argument to the second `%`, and so on and so forth, in a left --> right order of operations.
             - Escape characters such as newline `\n` and tab `\t` are supported.
             - For example, `printf("My name is %s\n I am %i years old\n", name_variable, age_variable);` 
     - `...` is an ellipsis indicating that `printf()` accepts a variable number of arguments. 
         - These additional arguments correspond to the values that will replace the placeholders in the format string.
 5. `printf()` is a ***'variadic function'***, meaning it can accept a different number of arguments based on the ***'format string'*** provided.
+
+
 
 
 4.	Structure:
