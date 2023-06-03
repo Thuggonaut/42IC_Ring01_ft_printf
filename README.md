@@ -42,7 +42,7 @@
 
 
 ## Step 2: Learn about Variadic functions
-### Variadic functions
+🔸 **Variadic functions**
 1. Is a function that takes a variable number of arguments at runtime, such as `printf` that takes any number of arguments, and formats them into a string according to a ***'format string'***. 
 2. Key features of a variadic function includes: 
     - the `stdarg.h` header file
