@@ -27,13 +27,16 @@
     int printf(const char *format, ...);
 
 - ***printf()*** returns an ***int*** value representing the number of characters printed (excluding the null terminator).
+
 - ***const char *format*** is a pointer to a string specifying the format of the output. 
+
     - It contains placeholders (% specifiers) that are replaced by the corresponding values specified in subsequent   
       arguments.
+
 - ***...*** is an ellipsis indicating that ***printf()*** accepts a variable number of arguments. 
     - These additional arguments correspond to the values that will replace the placeholders in the format string.
-- ***printf()*** is a ***variadic function***, meaning it can accept a different number of arguments based on the ***format string***   
-provided.
+
+- ***printf()*** is a ***variadic function***, meaning it can accept a different number of arguments based on the ***format string*** provided.
 
 
 4.	Structure:
