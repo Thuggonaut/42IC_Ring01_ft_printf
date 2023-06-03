@@ -24,7 +24,7 @@
 2. It is defined in the standard C library ***stdio.h***.
 3. The prototype is:
 
-    ***int printf(const char *format, ...);***
+    *** int printf(const char *format, ...); ***
 
 4. ***printf()*** returns an ***int*** value representing the number of characters printed (excluding the null terminator).
     - ***const char *format*** is a pointer to a string specifying the format of the output. 
