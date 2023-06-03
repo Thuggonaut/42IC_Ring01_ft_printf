@@ -41,6 +41,17 @@
 5. `printf()` is a ***'variadic function'***, meaning it can accept a different number of arguments based on the ***'format string'*** provided.
 
 
+## Step 2: Learn about Variadic functions
+### Variadic functions
+1. Is a function that takes a variable number of arguments at runtime, such as `printf` that takes any number of arguments, and formats them into a string according to a ***'format string'***. 
+2. Key features of a variadic function includes: 
+    - the `stdarg.h` header file
+    - the `va_list ` data type
+    - the `va_start()`, `va_arg`, `va_copy` and `va_end` macros
+
+### stdarg.h header file
+- Provides a set of maros and data types that allow you to work with variable-length argument lists.
+- 
 
 
 4.	Structure:
