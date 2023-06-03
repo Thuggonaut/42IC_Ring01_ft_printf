@@ -7,7 +7,7 @@
 - The following consists of how I tackled this project, which includes drafting a plan about what I needed to learn, and how I could start. 
 - Notes are included.
 
-## Outline of the Plan:
+## 🔷 Outline of the Plan:
 - Step 1: [Learn the original prinft() function](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#step-1-learn-the-original-prinft-function)
 - Step 2: Learn about Variadic functions
 - Step 3: Write the structure of directories/source files (tree)
@@ -41,7 +41,7 @@
 5. `printf()` is a ***'variadic function'***, meaning it can accept a different number of arguments based on the ***'format string'*** provided.
 
 
-## Step 2: Learn about Variadic functions
+## 🔷 Step 2: Learn about Variadic functions
 🔸 **Variadic functions**
 1. Is a function that takes a variable number of arguments at runtime, such as `printf` that takes any number of arguments, and formats them into a string according to a ***'format string'***. 
 2. Key features of a variadic function includes: 
