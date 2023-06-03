@@ -19,7 +19,7 @@
 - Step 9: Compile the library of ft_printf
 - Step 10: Test the ft_printf() against the original printf
 
-## Step 1: Learn the original prinft() function:
+🔷 ## Step 1: Learn the original prinft() function:
 1. `printf()` is used to print formatted output to the standard output stream.
     - The ***'f'*** in ***'printf'*** refers to ***'formatted string'*** and which is surrounded by double quotes ***"  "***.
 2. It is defined in the standard C library ***'stdio.h'***.
