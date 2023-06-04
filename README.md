@@ -55,7 +55,36 @@
     - A variable argument list is a mechanism that alows a function to accept a variable number of arguments of different types. 
 2. A variable argument list is declared using the elipsis `...` as the last parameter in the function prototype, and indicates that a variable number of arguments of any type, will be accepted.
 3. In a function with variable-length arguments, the number and types of arguments are not known at compile time, so they're unable to be explicitly declared. 
-    - In C, the compiler needs to know the number and types of arguments of a function in order to generate the correct code. 
+    - In C, the compiler needs to know the number and types of arguments of a function in order to generate the correct code for the function.
+    - When declaring a function with fixed parameters, the number and types of parameters are known at compile time, so the compiler can generate the appropriate code. 
+        - For example, suppose we declare a function called `int    average(int num, ...);` to take a number of arguments of type `int`, in order to calculate the average of the sum.
+        - We may call the function as  `average(5,     1, 2, 3, 4, 5);`
+        - `5` tells us there will be five arguments following, all of which are type   `int`. 
+    - In a function with variable-length arguments however, this is unknown at compile time. Instead, the function relies on runtime information to determine the number and types of arguments passed in. 
+        -   This is where the `stdarg.h` library comes in, and is used to access the arguments through a `va_list` object (a variable-length argument list).
+4. `stdarg.h` defines three important macros that are used for working with variable-length argument lists.
+    - `va_start()` is used to initialise the variable-length argument list.
+    - `va_arg()` is used to access the variable-length argument list.
+    - `va_end()` is used to terminate the variable-length argument list.
+
+
+🔸 **va_list data type**
+1. The `va_list` data type represents a variable-length argument list. 
+2. It is used to create a list of arguments because recall, the number and types of the arguments are not known at compile time. 
+3. `va_list` is implemented as a pointer to a memory location where the arguments are stored.
+4. Because the compiler doesn't know in advance how many arguments will be passed, or what their types are, to handle this, the ***'stack'*** is used to store the arguments in memory at runtime (execution from when the program is launched, to when the program is terminated).
+    - The ***'stack'*** is a region of memory used to store temporary variables and function call frames during program execution.
+5. To use `va_list`, you first need to declare a variable type `va_list` in the function that uses it.
+    - For example;
+        - ```
+        void    my_printf(const char *format, ...)
+        {
+            va_list     arg_ptr;
+            
+            //Rest of the function
+        }
+        ```
+    
 
 
 4.	Structure:
