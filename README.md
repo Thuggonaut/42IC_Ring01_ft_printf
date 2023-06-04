@@ -246,7 +246,7 @@ ft_printf/
     - `ft_printf.h` will contain the necessary prototypes and declarations for your ft_printf function. 
 
 
-## 🔷 Step 6: Write the fprmat specifier handler and utility (helper functions) source files
+## 🔷 Step 6: Write the format specifier handler and utility (helper functions) source files
 ### 🔸 The conversion source files
 1. Inside the srcs/ directory, write the srcs files to handle each format specifier:
     - `ft_handle_char.c`: The function that handles the %c specifier.
