@@ -9,7 +9,7 @@
 
 ## 🔷 Outline of the Plan:
 - Step 1: [Learn the original prinft() function](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#step-1-learn-the-original-prinft-function)
-- Step 2: Learn about Variadic functions
+- Step 2: [Learn about Variadic functions](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-2-learn-about-variadic-functions)
 - Step 3: Write the structure of directories/source files (tree)
 - Step 4: Create the directories
 - Step 5: Write the ft_printf.h header file
