@@ -166,6 +166,7 @@
     - This "clean up' involves de-allocating any resources that were allocated to support the variable argument processing.
 3. `va_end()` takes one argument: the `va_list` variable, that is to be cleaned up.
 4. Example of how to use `va_end()`:
+
         ```
         #include <stdio.h>
         #niclude <stdarg.h>
