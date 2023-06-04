@@ -120,6 +120,7 @@
 3. As `va_arg()` retrieves the next argument from the variable-length argument list, it returns its value, before advancing the `va_list` pointer to point to the next argument in the process.
     - The data type passed as the second argument of `va_arg()` must match the type of the next argument in the variable-length argument list. 
 4. Example of how to use `va_arg()`:
+        -
         ```
         #include <stdio.h>
         #niclude <stdarg.h>
