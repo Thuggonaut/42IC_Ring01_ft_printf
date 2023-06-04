@@ -16,8 +16,8 @@
 - Step 6: [Write the format specifier handler and utility (helper functions) source files](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-6-write-the-fprmat-specifier-handler-and-utility-helper-functions-source-files)
 - Step 7: [Write the ft_printf.c source file](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-7-write-the-ft_printfc-source-file)
 - Step 8: Write the Makefile
-- Step 9: Compile the library of ft_printf
-- Step 10: Test the ft_printf() against the original printf
+- Step 9: Compile the library of ft_printf()
+- Step 10: Test the ft_printf() against the original printf()
 
 ## 🔷 Step 1: Learn the original prinft() function:
 1. `printf()` is used to print formatted output to the standard output stream.
