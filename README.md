@@ -120,33 +120,90 @@
 3. As `va_arg()` retrieves the next argument from the variable-length argument list, it returns its value, before advancing the `va_list` pointer to point to the next argument in the process.
     - The data type passed as the second argument of `va_arg()` must match the type of the next argument in the variable-length argument list. 
 4. Example of how to use `va_arg()`:
-    ```
-    #include <stdio.h>
-    #niclude <stdarg.h>
+        ```
+        #include <stdio.h>
+        #niclude <stdarg.h>
 
-    void    print_ints(int count, ...)      
-    {
-        va_list     args;
-        va_start(args, count);
-
-        int     i;
-        while (i < count);
+        void    print_ints(int count, ...)      
         {
-            int arg = va_arg(args, int);
-            printf("%d ", arg);
-            i++;
+            va_list     args;
+            va_start(args, count);
+
+            int     i = 0;
+            while (i < count)
+            {
+                int arg = va_arg(args, int);
+                printf("%d ", arg);
+                i++;
+            }
+            va_end(args);
         }
-        va_end(args);
-    }
 
-    int main()
-    {
-        prnit_ints(3,   1, 2, 3);
-        return (0);
-    }
-    ```
-        - Define a function called 'print_ints' that takes a variable number of arguments
+        int main()
+        {
+            print_ints(3,   1, 2, 3);
+            return (0);
+        }
+        ```
+    - Define a function called `print_ints` that takes a variable number of arguments
+    - The first argument is an integer named `count` that specifies the number of arguments to follow in the variable argument list
+    - Recall, the elipsis `...` indicates there will be additional variable arguments
+    - Declare a `va_list` variable pointer called `args`, that will point to the variable argument list
+    - `va_start()` initializes `args`. It uses the address of `count` as a reference point and sets `args` to point to the first variable argument (the memory location right after `count`)
+    - The variable arguments are now ready to be accessed by `va_arg()`
+    - The `while` loop runs `count` number of times, each time iterating over, and retrieving each integer argument using `va_arg()`
+    - `va_arg()` takes in as arguments, the argument pointer `args`, and the data type of the next argument `int`
+    `printf()` prints the integer argument and a space
+    - `va_end()` is called to signal the end of the variable argument list.
+    - In the main, `printf()` is called three times, each time printing out an integer value
 
+
+### 🔸 va_end() macro
+1. `va_end()` is used to indicate you are finished processing a variable-length argument list.
+2. It's necessary to call `va_end()` at the end of a variadic function to clean up the `va_list` variable.
+    - When you use `va_start()` to initialize a `va_list` variable pointer, the system needs to do some "book-keeping" (keeping track of information such as: the starting address of the argument list; the type and size of each argument; the number of arguments), to set up the processing of the variable arguments.
+    - `va_end()` tells the system you are done processing variable arguments, and to "clean up" the `va_list` variable. 
+    - This "clean up' involves de-allocating any resources that were allocated to support the variable argument processing.
+3. `va_end()` takes one argument: the `va_list` variable, that is to be cleaned up.
+4. Example of how to use `va_end()`:
+        ```
+        #include <stdio.h>
+        #niclude <stdarg.h>
+
+        void    print_strings(int count, ...)      
+        {
+            va_list     args;
+            va_start(args, count);
+
+            int     i = 0;
+            while (i < count)
+            {
+                char *str = va_arg(args, char *);
+                printf("%s ", str);
+                i++;
+            }
+            va_end(args);
+        }
+
+        int main()
+        {
+            print_strings(3, "hello", "world", "!")
+            return (0);
+        }
+        ```
+    - Define a function `print_strings()` that takes an integer named `count` and a variable number of arguments `...`
+    - `count` specifies how many additional arguments will be passed into `print_string()`
+    - Declare a `va_list` variable pointer named `args` that will point to the variable argument list
+    - `va_start()` initializes `args` and sets `args` to point to the first variable argument from the list (the memory location right after `count`)
+    - The `while` loop iterates over the variable arguments `count` number of times
+    - `va_arg()` is used to retrieve the next argument from `args`
+    - Since we know that all the arguments are strings, we cast the argument to type `char *` because it is a pointer type that points to an array of characters (a string)
+    - `printf()` prints the string before incrementing the loop counter `i`
+    - `va_end()` cleans up `args`
+    - In the main, `printf()` is called three times, each time printing out a string, and outputting `hello world !`
+
+
+## 🔷 Step 3: Write the structure of directories/source files (tree)
 
 
 4.	Structure:
