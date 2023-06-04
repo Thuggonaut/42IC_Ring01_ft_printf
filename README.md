@@ -4,7 +4,7 @@
 - This ft_printf project is completed without the bonus.
 - The subject.pdf requires a recode of the printf() function from libc, without implementing the buffer management of the original printf().
 - Our ft_printf.c must handle the following conversions: c, s, p, d, i, u, x, X, %.
-- The following consists of how I tackled this project, which includes drafting a plan about what I needed to learn, and how I could start. 
+- The following consists of how I tackled this project, which includes drafting a plan about what I needed to learn, and where to begin. 
 - Notes are included.
 
 ## 🔷 Outline of the Plan:
@@ -61,7 +61,7 @@
         - We may call the function as  `average(5,     1, 2, 3, 4, 5);`
         - `5` tells us there will be five arguments following, all of which are type   `int`. 
     - In a function with variable-length arguments however, this is unknown at compile time. Instead, the function relies on runtime information to determine the number and types of arguments passed in. 
-        -   This is where the `stdarg.h` library comes in, and is used to access the arguments through a `va_list` object (a variable-length argument list).
+        -   This is where the `stdarg.h` library comes in, and is used to access the arguments through a `va_list` object (a pointer that points to a variable-length argument list).
 4. `stdarg.h` defines three important macros that are used for working with variable-length argument lists.
     - `va_start()` is used to initialise the variable-length argument list.
     - `va_arg()` is used to access the variable-length argument list.
@@ -91,7 +91,7 @@
 1. The `va_start()` macro initializes the `va_list` variable with the arguments passed into a variadic function (such as `printf()`). 
 2. It is neccessary to call `va_start()` at the beginning of the function, to properly initialize the `va_list` object, making it ready for access. 
 3. `va_start()` takes two arguments:
-    - The `va_list` variable that will hold the variable-length argument list
+    - The `va_list` variable that points to the variable-length argument list
     - The name of the last named parameter of the function.
         - It is important for  `va_start()` to know the last named parameter, because it uses its memory location to determine the location of the firt variable argument:
         ```
@@ -113,7 +113,39 @@
 
 
 ### 🔸 va_arg() macro
-1. 
+1. `va_arg()` is used to retrieve each individual argument from the variable-length argument list. 
+2. It takes two arguments:
+    - The `va_list` variable pointer that points to the variable-length argument list
+    - The data type of the next argument in the variable-length argument list
+3. As `va_arg()` retrieves the next argument from the variable-length argument list, it returns its value, before advancing the `va_list` pointer to point to the next argument in the process.
+    - The data type passed as the second argument of `va_arg()` must match the type of the next argument in the variable-length argument list. 
+4. Example of how to use `va_arg()`:
+    ```
+    #include <stdio.h>
+    #niclude <stdarg.h>
+
+    void    print_ints(int count, ...)      
+    {
+        va_list     args;
+        va_start(args, count);
+
+        int     i;
+        while (i < count);
+        {
+            int arg = va_arg(args, int);
+            printf("%d ", arg);
+            i++;
+        }
+        va_end(args);
+    }
+
+    int main()
+    {
+        prnit_ints(3,   1, 2, 3);
+        return (0);
+    }
+    ```
+        - Define a function called 'print_ints' that takes a variable number of arguments
 
 
 
