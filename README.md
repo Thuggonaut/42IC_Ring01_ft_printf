@@ -102,7 +102,9 @@
         {
             va_list     arg_ptr;                        //A 'va_list' variable pointer is declared called 'arg_ptr'
             va_start(arg_ptr, format);                  //'va_start' uses the address of 'format' as a reference point
-                                                        //It then sets the 'arg_ptr' to point to this address, where the the variable-length argument list should begin (the memory location right after where 'format' is)    
+                                                        //It then sets the 'arg_ptr' to point to this address, where the 
+                                                        variable-length argument list should begin (the memory location 
+                                                        right after where 'format' is)    
             //Access the variable-length argument
             //Clean up the variable-length argument
         }
