@@ -42,7 +42,7 @@
 
 
 ## 🔷 Step 2: Learn about Variadic functions
-🔸 **Variadic functions**
+### 🔸Variadic functions
 1. Is a function that takes a variable number of arguments at runtime, such as `printf` that takes any number of arguments, and formats them into a string according to a ***'format string'***. 
 2. Key features of a variadic function includes: 
     - the `stdarg.h` header file
@@ -50,7 +50,7 @@
     - the `va_start()`, `va_arg`, `va_copy` and `va_end` macros
 
 
-🔸 **stdarg.h header file**
+### 🔸 stdarg.h header file
 1. Provides a set of macros and data types that allow you to work with variable-length argument lists.
     - A variable argument list is a mechanism that alows a function to accept a variable number of arguments of different types. 
 2. A variable argument list is declared using the elipsis `...` as the last parameter in the function prototype, and indicates that a variable number of arguments of any type, will be accepted.
@@ -68,7 +68,7 @@
     - `va_end()` is used to terminate the variable-length argument list.
 
 
-🔸 **va_list data type**
+### 🔸 va_list data type
 1. The `va_list` data type represents a variable-length argument list. 
 2. It is used to create a list of arguments because recall, the number and types of the arguments are not known at compile time. 
 3. `va_list` is implemented as a pointer to a memory location where the arguments are stored.
