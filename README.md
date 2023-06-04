@@ -1,4 +1,4 @@
-# 42_IC_Ring01_ft_printf
+# 🖨️ 42_IC_Ring01_ft_printf
 
 ## Preface:
 - This ft_printf project is completed without the bonus.
