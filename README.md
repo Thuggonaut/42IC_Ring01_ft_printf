@@ -93,7 +93,7 @@
 3. `va_start()` takes two arguments:
     - The `va_list` variable that points to the variable-length argument list
     - The name of the last named parameter of the function.
-        - It is important for  `va_start()` to know the last named parameter, because it uses its memory location to determine the location of the firt variable argument:
+        - It is important for  `va_start()` to know the last named parameter, because it uses its memory location to determine the location of the first variable argument:
         ```
         #include <stdarg.h>
         #include <stdio.h>
@@ -120,7 +120,6 @@
 3. As `va_arg()` retrieves the next argument from the variable-length argument list, it returns its value, before advancing the `va_list` pointer to point to the next argument in the process.
     - The data type passed as the second argument of `va_arg()` must match the type of the next argument in the variable-length argument list. 
 4. Example of how to use `va_arg()`:
-
         ```
         #include <stdio.h>
         #niclude <stdarg.h>
