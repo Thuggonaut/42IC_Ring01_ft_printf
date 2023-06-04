@@ -84,7 +84,35 @@
             //Rest of the function
         }
         ```
-    
+6. Once the `va_list` variable is declared, you need to initialize it using the `va_start()` macro.
+
+
+### 🔸 va_start() macro
+1. The `va_start()` macro initializes the `va_list` variable with the arguments passed into a variadic function (such as `printf()`). 
+2. It is neccessary to call `va_start()` at the beginning of the function, to properly initialize the `va_list` object, making it ready for access. 
+3. `va_start()` takes two arguments:
+    - The `va_list` variable that will hold the variable-length argument list
+    - The name of the last named parameter of the function.
+        - It is important for  `va_start()` to know the last named parameter, because it uses its memory location to determine the location of the firt variable argument:
+        ```
+        #include <stdarg.h>
+        #include <stdio.h>
+
+        void    my_prinft(const char *format, ...)      //There is only one named parameter here, making 'format' the  last
+        {
+            va_list     arg_ptr;                        //A 'va_list' variable pointer is declared called 'arg_ptr'
+            va_start(arg_ptr, format);                  //'va_start' uses the address of 'format' as a reference point
+                                                        //It then sets the 'arg_ptr' to point to this address, where the the variable-length argument list should begin (the memory location right after where 'format' is)    
+            //Access the variable-length argument
+            //Clean up the variable-length argument
+        }
+        ```
+4. After the `va_list arg_ptr` has been initialized, each of its variable argument is now ready to be accessed using the `va_arg()` macro.
+
+
+### 🔸 va_arg() macro
+1. 
+
 
 
 4.	Structure:
