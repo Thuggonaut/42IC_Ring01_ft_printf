@@ -76,7 +76,7 @@
     - The ***'stack'*** is a region of memory used to store temporary variables and function call frames during program execution.
 5. To use `va_list`, you first need to declare a variable type `va_list` in the function that uses it.
     - For example;
-        - ```
+        ```
         void    my_printf(const char *format, ...)
         {
             va_list     arg_ptr;
