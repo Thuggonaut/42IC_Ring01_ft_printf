@@ -13,7 +13,7 @@
 - Step 3: [Write the structure of directories/source files (tree)](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-3-write-the-structure-of-directoriessource-files-tree)
 - Step 4: Create the directories
 - Step 5: Write the ft_printf.h header file
-- Step 6: Write the conversion and utility (helper functions) source files
+- Step 6: Write the format specifier handler and utility (helper functions) source files
 - Step 7: Write the ft_printf.c source file
 - Step 8: Write the Makefile
 - Step 9: Compile the library of ft_printf
@@ -98,17 +98,21 @@
         #include <stdarg.h>
         #include <stdio.h>
 
-        void    my_prinft(const char *format, ...)      //There is only one named parameter here, making 'format' the  last
+        void    my_prinft(const char *format, ...)      
         {
-            va_list     arg_ptr;                        //A 'va_list' variable pointer is declared called 'arg_ptr'
-            va_start(arg_ptr, format);                  //'va_start' uses the address of 'format' as a reference point
-                                                        //It then sets the 'arg_ptr' to point to this address, where the 
-                                                        variable-length argument list should begin (the memory location 
-                                                        right after where 'format' is)    
+            va_list     arg_ptr;                        
+            va_start(arg_ptr, format);                  
+                                                          
             //Access the variable-length argument
             //Clean up the variable-length argument
         }
         ```
+        - There is only one named parameter here, making `format` the  last
+        - A `va_list` variable pointer is declared called `arg_ptr`
+        - `va_start()` uses the address of `format` as a reference point
+        - It then sets the `arg_ptr` to point to this address, where the variable-length argument list should begin (the memory location right after where `format` is)  
+
+
 4. After the `va_list arg_ptr` has been initialized, each of its variable argument is now ready to be accessed using the `va_arg()` macro.
 
 
@@ -233,54 +237,77 @@ ft_printf/
 ```
 
 
-5.	Create the ft_printf/, includes/, libft/ and srcs/ directories
+## 🔷 Step 4: Create the directories
+1. Create the ft_printf/, includes/, srcs/ and utils/ directories in iTerm.
 
-6.	Inside the includes directory, create two header files: libft.h and ft_printf.h
-o	libft.h will contain all the necessary function prototypes from your libft library, while 
-o	ft_printf.h will contain the necessary prototypes and declarations for your ft_printf function. Define the lookup_table here, that returns the appropriate conversion function based on the specifier character.
 
-7.	Inside the libft directory, create a header file called libft.h
-o	Include the Makefile 
-o	Include all the libft source files in src/.
-o	Compile using ar.
+## 🔷 Step 5: Write the ft_printf.h header file
+1. Inside the includes/ directory, write the header file: `ft_printf.h`
+    - `ft_printf.h` will contain the necessary prototypes and declarations for your ft_printf function. 
 
-8.	Inside the srcs/, create a file called ft_printf.c. 
-o	This file will contain the main ft_printf function.
-o	Write a basic version of the ft_printf function that can handle simple string printing. 
-o	Start by writing the necessary #include statements for the ft_printf.h and libft.h header files, and then 
-o	Write a basic loop that reads the format string and prints out any non-format characters it finds.
 
-9.	Create the srcs files to handle each conversion specifier:
-o	ft_parse.c: contains functions for parsing the format string and extracting the relevant information, such as the format flags, width, precision, and specifier.
-o	ft_convert.c: contains the conversion functions for each of the supported specifiers, such as ft_handle_char, ft_handle_string, ft_handle_int, etc. These functions are called by the lookup table based on the specifier character.
-o	ft_handle_char.c: The function that handles the %c specifier.
-%c Prints a single character.
-o	ft_handle_string.c: The function that handles the %s specifier.
-%s Prints a string (as defined by the common C convention).
-o	ft_handle_int.c: a single conversion function that handles both %d and %i specifiers:
-%d Prints a decimal (base 10) number.
-%i Prints an integer in base 10.
-o	ft_handle_pointer.c: The function that handles the %p specifier.
-%p The void * pointer argument has to be printed in hexadecimal format.
-o	ft_handle_unsigned.c: The function that handles the %u specifier.
-%u Prints an unsigned decimal (base 10) number.
-o	ft_handle_hexadecimal.c: The function that handles the %x and %X specifiers.
-%x Prints a number in hexadecimal (base 16) lowercase format.
-%X Prints a number in hexadecimal (base 16) uppercase format.
-o	ft_handle_percent.c: The function that handles the %% specifier.
-%% Prints a percent sign.
-o	ft_handle_flags.c: The function that handles the -0. flags.
-o	ft_handle_width.c: The function that handles the minimum field width.
-o	ft_handle_precision.c: The function that handles the precision field.
+## 🔷 Step 6: Write the fprmat specifier handler and utility (helper functions) source files
+### 🔸 The conversion source files
+1. Inside the srcs/ directory, write the srcs files to handle each format specifier:
+    - `ft_handle_char.c`: The function that handles the %c specifier.
+        - `%c` Prints a single character.
+    - `ft_handle_string.c`: The function that handles the %s specifier.
+        - `%s` Prints a string (as defined by the common C convention).
+    - `ft_handle_int.c`: a single conversion function that handles both %d and %i specifiers:
+        - `%d` Prints a decimal (base 10) number.
+        - `%i` Prints an integer in base 10.
+    - `ft_handle_pointer.c`: The function that handles the %p specifier.
+        - `%p` The void * pointer argument has to be printed in hexadecimal format.
+    - `ft_handle_unsigned.c`: The function that handles the %u specifier.
+        - `%u` Prints an unsigned decimal (base 10) number.
+    - `ft_handle_hexadecimal.c`: The function that handles the %x and %X specifiers.
+        - `%x` Prints a number in hexadecimal (base 16) lowercase format.
+        - `%X` Prints a number in hexadecimal (base 16) uppercase format.
+    - `ft_handle_percent.c`: The function that handles the %% specifier.
+        - `%%` Prints a percent sign.
 
-o	NOTE:
-The functions ft_handle_flags, ft_handle_width, and ft_handle_precision are typically called by the conversion functions for handling the respective flags and fields.
-For example, the conversion function for %d specifier may call ft_handle_flags to handle the flags like - or 0, ft_handle_width to handle the minimum field width, and ft_handle_precision to handle the precision field.
-These functions are not part of the lookup table, but they are used in conjunction with the lookup table to implement the conversion functions for each specifier.
 
-10.	Write the Makefile
+### 🔸 The utility source files
+1. Inside the utils/ directory, write the utility (helper functions) source files:
+    - `ft_putnbr_base.c`: converts a number and writes said number in a specified base, e.g. base 16.
+    - `ft_putchar.c`: writes a single character.
+    - `ft_strlen.c`: calculates the length of a string
 
-11.	Create the library “libftprintf.a” using ar:
-o	When you run the make command, your Makefile should compile all the necessary source files into object files and then use the ar command to create the libftprintf.a
 
-12.	Test against the original printf()
+## 🔷 Step 7: Write the ft_printf.c source file
+1. Inside the srcs/ directory, write a file called `ft_printf.c`. 
+    - This file will contain the main ft_printf function.
+2. Start by including the necessary header file `ft_printf.h` which contains the function prototypes and required definitions.
+3. Define a function (e.g. 'ft_specifier') that takes a character `c` representing the format specifier and a `va_list` variable pointer, used to access the variable arguments passed to the `ft_printf()` function. 
+    - This function determines the appropriate handling function based on the format specifier and calls it with the `va_list` variable pointer argument.
+    - Use conditional statements (such as `if`) to check the value of the format specifier character `c`. 
+    - Depending on the value, call the corresponding handling function, such as `ft_handle_char()` for `c`, `ft_handle_string()` for `s`, `ft_handle_int()` for `i` or `d`, and so on. 
+    - If the format specifier does not match any of the format specifiers, use the `write()` function to print the character `c` as it is, to the standard output and return the total number of characters printed.
+4. Define the `ft_printf()` function that combines the ***'format string'*** and variable arguments to produce formatted output according to the specified format specifiers.
+    - The `ft_printf()` function serves as the entry point for using the `ft_printf` functionality. 
+    - It takes a ***'format string'*** `const char *format` as its first argument, which specifies the format of the output, and additional variable arguments `...` that correspond to the format specifiers in the ***'format string'***.
+    - When you call the `ft_printf` function, you provide a ***'format string'*** that specifies how the output should be formatted, and you can pass any number of additional arguments that will be used to fill in the placeholders `%` in the ***'format string'***.
+    - The `ft_printf` function processes the ***'format string'***, replaces the placeholders with the corresponding values from the variable arguments, and prints the formatted output to the standard output. 
+    - It then returns the total number of characters printed.
+5. Inside the `ft_printf` function, declare a `va_list` variable pointer (e.g. 'ap') and an integer variable (e.g 'count') to keep track of the number of characters printed.
+    - Recall, you need to declare the variable type `va_list` (pointer to a variable argument list) in the function that uses it, in this case, it is `ft_printf()` (which takes in a variable-length argument list `...`).
+6. Start the variable argument processing by calling `va_start` with the `va_list` variable pointer, and the last named parameter of `ft_printf()`.
+    - For example, `va_start(ap, format);`
+7. Use a `while` loop to iterate through each character in the ***'format string'*** until the end of the ***'format string'*** is reached.
+    - Inside the loop, check if the current character in the ***'format string'*** is a `%` placeholder character
+    - Check if the next character after the `%` placeholder exists. If it doesn't exist, the format specifier is incomplete and the function should ***"break"*** out of the `while` loop.
+    - If the current character is a `%` placeholder character, and the next character exists:
+        - Increment the ***'format string'*** to skip the `%` placeholder character
+        - Then, call `ft_specifier` with the next character as the ***'format specifier'*** (e.g. 'char c') and the `va_list` variable pointer (e.g. 'ap') as the argument. 
+        - Add the return value of `ft_specifier` to the integer variable (e.g. 'count') that keeps track of the number of characters printed.
+    - If the current character is not a `%` placeholder character, use the `write()` function to print the current character of the ***'format string'*** to the standard output and increment the counter (e.g. 'count') by 1.
+    - After each iteration, increment the ***'format string'*** to move to the next character in the ***'format string'***.
+8. After the loop ends, call `va_end()` to clean up the variable argument processing.
+9. Finally, return the total count of characters printed (e.g. 'count').
+
+
+## 🔷 Step 8: Write the Makefile
+
+## 🔷 Step 9: Compile the library of ft_printf
+
+## 🔷 Step 10: Test the ft_printf() against the original printf
