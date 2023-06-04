@@ -11,10 +11,10 @@
 - Step 1: [Learn the original prinft() function](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#step-1-learn-the-original-prinft-function)
 - Step 2: [Learn about Variadic functions](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-2-learn-about-variadic-functions)
 - Step 3: [Write the structure of directories/source files (tree)](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-3-write-the-structure-of-directoriessource-files-tree)
-- Step 4: Create the directories
-- Step 5: Write the ft_printf.h header file
-- Step 6: Write the format specifier handler and utility (helper functions) source files
-- Step 7: Write the ft_printf.c source file
+- Step 4: [Create the directories](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-4-create-the-directories)
+- Step 5: [Write the ft_printf.h header file](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-5-write-the-ft_printfh-header-file)
+- Step 6: [Write the format specifier handler and utility (helper functions) source files](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-6-write-the-fprmat-specifier-handler-and-utility-helper-functions-source-files)
+- Step 7: [Write the ft_printf.c source file](https://github.com/Thuggonaut/42IC_Ring01_ft_printf/blob/master/README.md#-step-7-write-the-ft_printfc-source-file)
 - Step 8: Write the Makefile
 - Step 9: Compile the library of ft_printf
 - Step 10: Test the ft_printf() against the original printf
