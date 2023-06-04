@@ -121,29 +121,29 @@
     - The data type passed as the second argument of `va_arg()` must match the type of the next argument in the variable-length argument list. 
 4. Example of how to use `va_arg()`:
     ```
-        #include <stdio.h>
-        #niclude <stdarg.h>
+    #include <stdio.h>
+    #niclude <stdarg.h>
 
-        void    print_ints(int count, ...)      
+    void    print_ints(int count, ...)      
+    {
+        va_list     args;
+        va_start(args, count);
+
+        int     i = 0;
+        while (i < count)
         {
-            va_list     args;
-            va_start(args, count);
-
-            int     i = 0;
-            while (i < count)
-            {
-                int arg = va_arg(args, int);
-                printf("%d ", arg);
-                i++;
-            }
-            va_end(args);
+            int arg = va_arg(args, int);
+            printf("%d ", arg);
+            i++;
         }
+        va_end(args);
+    }
 
-        int main()
-        {
-            print_ints(3,   1, 2, 3);
-            return (0);
-        }
+    int main()
+    {
+        print_ints(3,   1, 2, 3);
+        return (0);
+    }
     ```
     - Define a function called `print_ints` that takes a variable number of arguments
     - The first argument is an integer named `count` that specifies the number of arguments to follow in the variable argument list
@@ -166,32 +166,31 @@
     - This "clean up' involves de-allocating any resources that were allocated to support the variable argument processing.
 3. `va_end()` takes one argument: the `va_list` variable, that is to be cleaned up.
 4. Example of how to use `va_end()`:
+    ```
+    #include <stdio.h>
+    #niclude <stdarg.h>
 
-        ```
-        #include <stdio.h>
-        #niclude <stdarg.h>
+    void    print_strings(int count, ...)      
+    {
+        va_list     args;
+        va_start(args, count);
 
-        void    print_strings(int count, ...)      
+        int     i = 0;
+        while (i < count)
         {
-            va_list     args;
-            va_start(args, count);
-
-            int     i = 0;
-            while (i < count)
-            {
-                char *str = va_arg(args, char *);
-                printf("%s ", str);
-                i++;
-            }
-            va_end(args);
+            char *str = va_arg(args, char *);
+            printf("%s ", str);
+            i++;
         }
+        va_end(args);
+    }
 
-        int main()
-        {
-            print_strings(3, "hello", "world", "!")
-            return (0);
-        }
-        ```
+    int main()
+    {
+        print_strings(3, "hello", "world", "!")
+        return (0);
+    }
+    ```
     - Define a function `print_strings()` that takes an integer named `count` and a variable number of arguments `...`
     - `count` specifies how many additional arguments will be passed into `print_string()`
     - Declare a `va_list` variable pointer named `args` that will point to the variable argument list
@@ -205,46 +204,34 @@
 
 
 ## 🔷 Step 3: Write the structure of directories/source files (tree)
-
-
-4.	Structure:
-
+```
 ft_printf/
 │
 ├── Makefile
 │
-├── .gitignore
-│
 ├── includes/
-│   ├── ft_printf.h (define lookup_table here)
-│   └── libft.h
-│
-├── libft/
-│   ├── Makefile
-│   ├── src/
-│   ├── libft.h
-│   └── libft.a
+│   └── ft_printf.h 
 │
 ├── srcs/
-│   ├── ft_printf.c
-│   ├── ft_parse.c
-│   ├── ft_convert.c
-│   ├── ft_utils.c
 │   ├── ft_handle_char.c
 │   ├── ft_handle_int.c
 │   ├── ft_handle_pointer.c
-│   ├── ft_handle_decimal.c
 │   ├── ft_handle_string.c
 │   ├── ft_handle_unsigned.c
-│   ├── ft_handle_hexadecimal.c
+│   ├── ft_handle_hex.c
 │   ├── ft_handle_percent.c
-│   ├── ft_handle_width.c
-│   ├── ft_handle_precision.c
-│   └── ft_handle_flags.c
+│   └── ft_printf.c
+│
+├── utils/
+│   ├── ft_putchar.c
+│   ├── ft_putnbr_base.c     //We need a function to convert a number to a hexadecimal string for the "%x" specifier
+│   └── ft_strlen.c
 │
 ├── main.c (optional)
 │
 └── libftprintf.a
+```
+
 
 5.	Create the ft_printf/, includes/, libft/ and srcs/ directories
 
