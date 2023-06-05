@@ -3,7 +3,7 @@
 int	ft_handle_int(va_list ap) //`ap` is a `va_list` pointer that is passed as an argument. Inside the function, this pointer is used to access the variable arguments
 {
 	long long	n; //To store the value of the next `int` argument retrieved from `ap` for processing. `long long` because it allows for the storage of a wider range of integer values compared to `int`
-	int			neg; //To keep track of whether the integer is negative
+	int		neg; //To keep track of whether the integer is negative
 
 	n = va_arg(ap, int); //Retrieves the next argument of type `long long int` from `ap` and assigns it to `n`
 	neg = 0;
