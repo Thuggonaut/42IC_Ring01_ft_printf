@@ -44,7 +44,7 @@ int ft_printf(const char *format, ...)
 	return (count);
 }
 
-/*
+
 int	ft_printf(const char *format, ...) //takes a format string `format` as its first argument, followed by a variable number of arguments indicated by the ellipsis `...`
 {
 	va_list	ap; //`ap` is an argument pointer and will be used to access the variable arguments
@@ -68,7 +68,7 @@ int	ft_printf(const char *format, ...) //takes a format string `format` as its f
 	va_end(ap); //Cleans up `ap` using the `va_end` macro
 	return (count); //Returns the total number of characters printed, which is stored in `count`
 }
-
+/*
 #1	This is a static function called `ft_specifier` and is responsible for handling different format specifiers and returning the number of characters printed.
 		- A static function is a function that has a "static" storage class specifier in its declaration. 
 		- In C, the static keyword applied to a function limits the scope of the function to the file in which 
