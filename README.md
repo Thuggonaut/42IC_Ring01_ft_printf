@@ -226,14 +226,10 @@ ft_printf/
 │   ├── ft_handle_percent.c
 │   └── ft_printf.c
 │
-├── utils/
-│   ├── ft_putchar.c
-│   ├── ft_putnbr_base.c     //We need a function to convert a number to a hexadecimal string for the "%x" specifier
-│   └── ft_strlen.c
-│
-├── main.c (optional)
-│
-└── libftprintf.a
+└── utils/
+    ├── ft_putchar.c
+    ├── ft_putnbr_base.c     //We need a function to convert a number to a hexadecimal string for the "%x" specifier
+    └── ft_strlen.c
 ```
 
 
