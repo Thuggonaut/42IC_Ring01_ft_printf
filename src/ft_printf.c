@@ -18,7 +18,7 @@ static int	ft_specifier(char c, va_list ap) //Takes a character `c`, representin
 		return (ft_handle_hexupper(ap));
 	else if (c == '%')
 		return(ft_handle_percent());
-	return (write(1, &c, 1)); //If the format specifier `c` doesn't match any of the specifiers in `ft_specifier()`, prints the character `c` as it is to the standard output, and returns the total number of characters printed
+	return (write(1, &c, 1)); //If the format specifier `c` doesn't match any of the specifiers in `ft_specifier()`, print the character `c` as it is to the standard output, and return the total number of characters printed
 }
 
 int ft_printf(const char *format, ...) //takes a format string `format` as its first argument, followed by a variable number of arguments indicated by the ellipsis `...`
