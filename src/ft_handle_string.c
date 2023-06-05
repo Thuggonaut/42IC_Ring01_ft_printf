@@ -3,7 +3,7 @@
 int	ft_handle_string(va_list ap) //`ap` is a `va_list` pointer that is passed as an argument. Inside the function, this pointer is used to access the variable arguments
 {
 	char	*s; //To store the next `string` argument retrieved from `ap` for processing
-	int		i; //To be used as a loop counter
+	int	i; //To be used as a loop counter
 
 	s = va_arg(ap, char *); //Retrieves the next `char` argument from `ap` and assigns it to `s` 
 	if (!s) //Checks if `s` is a null pointer
