@@ -30,15 +30,15 @@ int ft_printf(const char *format, ...) //takes a format string `format` as its f
 		return (0);
 	va_start(ap, format); //`ap` is initialised by `va_start()` macro, which prepares `ap` to access the variable arguments passed to `ft_printf()`
 	count = 0;
-	while (*format) //Loop through each character of the format string until it reaches the end of the string. See #2
+	while (*format) //Loop through each character of the format string until it reaches the end of the string
 	{
 		if (*format == '%' && !*(format + 1)) //Checks if the current character is a '%' sign and the next character is '\0'. If true, it means there is a single '%' sign at the end of the format string, indicating an incomplete format specifier
 			break ; //Terminates the loop prematurely, and continues with the code that follows the loop (in this case, it's the `va_end(ap)` and `return (count)`
 		else if (*format == '%') //Checks if the current character in the `format` string is a '%' sign, indicating a format specifier is found
-			count += ft_specifier(*(++format), ap); //Calls `ft_specifier()` with the correct format specifier and adds the return value to `count`, which keeps track of the total number of characters printed.See #3
+			count += ft_specifier(*(++format), ap); //Calls `ft_specifier()` with the correct format specifier and adds the return value to `count`, which keeps track of the total number of characters printed.See #2
 		else
 			count += write(1, format, 1); //If none of the previous conditions are met, the current character is a regular character. It is written to the standard output, and the return value `1`, (indicating success) is added to `count`
-		format++; //Move to the next character in the format string fpr processing
+		format++; //Move to the next character in the format string for processing
 	}
 	va_end(ap); //Cleans up `ap` using the `va_end` macro
 	return (count); //Returns the total number of characters printed, which is stored in `count`
@@ -56,29 +56,7 @@ int ft_printf(const char *format, ...) //takes a format string `format` as its f
 	specifier. 
 		- For example, if c is 'c', it calls the `ft_handle_char()` function to handle the character specifier.
 
-#2	The `while (format[++i]`) loop iterates through each character of the format string until it reaches '\0', 
-	allowing the code inside the loop to handle each character according to the specified conditions.
-
-	Using the pre-increment operator `++i` ensures that the loop starts with the first character of the format string
-	and continues until the end of the string, allowing the code inside the loop to handle each character correctly:
-
-	- Initially, the variable `i` is set to `-1` outside the loop.
-
-	- When the loop starts, `++i` pre-increments, the value of `i` before using it in the loop condition. 	  
-	  In other words, it increases the value of `i` by `1` and then uses the updated value.
-
-	- The expression `format[++i]` is evaluated, which retrieves the character at `index i + 1` from the 
-	  format string. Since `i` was pre-incremented, it represents the next index in each iteration. This 
-	  expression effectively fetches the next character in each iteration of the loop.
-
-	- `while (format[++i])` checks if the fetched character is not ('\0') indicating the end of the string.
-
-	- The loop continues to iterate, incrementing `i` and retrieving the next character in each iteration 
-	  until it reaches the null terminator.
-
-#3	`format[++i]` increments the value of `i` by `1` and accesses the next character in the format string. 
-		- By using the pre-increment operator `++i`, the value of `i` is incremented before it is used to 
-	  	  access the character. 
+#2	`*(++format)` increments `format` to access the next character in the format string. 
 		- This is done to skip the '%' sign and move to the next character, which represents the format 
 	  	  specifier.
 
