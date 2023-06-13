@@ -21,7 +21,7 @@ static int	ft_specifier(char c, va_list ap) //Takes a character `c`, representin
 	return (write(1, &c, 1)); //If the format specifier `c` doesn't match any of the specifiers in `ft_specifier()`, print the character `c` as it is to the standard output, and return the total number of characters printed
 }
 
-int ft_printf(const char *format, ...) //takes a format string `format` as its first argument, followed by a variable number of arguments indicated by the ellipsis `...`
+int ft_printf(const char *format, ...) //Takes a format string `format` as its first argument, followed by a variable number of arguments indicated by the ellipsis `...`
 {
 	va_list ap; //`ap` is an argument pointer and will be used to access the variable arguments
 	int count; //Keeps track of the total number of characters printed
