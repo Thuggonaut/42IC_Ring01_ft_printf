@@ -47,7 +47,7 @@
 2. Key features of a variadic function includes: 
     - the `stdarg.h` header file
     - the `va_list ` data type
-    - the `va_start()`, `va_arg`, `va_copy` and `va_end` macros
+    - the `va_start()`, `va_arg`, `va_copy` and `va_end` macros. <sub>Note: Our ft_printf() does not need to call the `va_copy` macro</sub>
 
 
 ### 🔸 stdarg.h header file
