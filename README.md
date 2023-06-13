@@ -286,7 +286,7 @@ ft_printf/
     - The `ft_printf` function processes the ***'format string'***, replaces the placeholders with the corresponding values from the variable arguments, and prints the formatted output to the standard output. 
     - It then returns the total number of characters printed.
 5. Inside the `ft_printf` function, declare a `va_list` variable pointer (e.g. 'ap') and an integer variable (e.g 'count') to keep track of the number of characters printed.
-    - Recall, you need to declare the variable type `va_list` (pointer to a variable argument list) in the function that uses it, in this case, it is `ft_printf()` (which takes in a variable-length argument list `...`).
+    - Recall, you need to declare the variable type `va_list` (pointer to a variable argument list) in the function that uses it, in this case, it is the `ft_printf.c` source file, (which takes in a variable-length argument list `...`).
 6. Start the variable argument processing by calling `va_start` with the `va_list` variable pointer, and the last named parameter of `ft_printf()`.
     - For example, `va_start(ap, format);`
 7. Use a `while` loop to iterate through each character in the ***'format string'*** until the end of the ***'format string'*** is reached.
