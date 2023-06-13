@@ -27,7 +27,7 @@
 
     `int printf(const char  *format, ...);`
 
-4. `printf()` returns an ***'int'*** value representing the number of characters printed (excluding the null terminator). It returns a negative value if an error occurs. <sub>Note: My ft_printf() did not account for this</sub>
+4. `printf()` returns an ***'int'*** value representing the number of characters printed (excluding the null terminator). It returns a negative value if an error occurs. <sub>Note: My ft_printf() did not account for this. However, I still passed Moulinnette with 100%</sub>
     - `const char  *format` is a pointer to a ***'format string'*** specifying the format of the output. 
         - The ***'format string'*** contains placeholders (% specifiers) that are replaced by the corresponding values specified in subsequent arguments.
         - The ***'%'*** placeholders are followed by a format specifier character, specifying the type of the argument to be printed.
