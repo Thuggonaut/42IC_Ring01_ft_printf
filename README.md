@@ -228,7 +228,7 @@ ft_printf/
 │
 └── utils/
     ├── ft_putchar.c
-    ├── ft_putnbr_base.c     //We need a function to convert a number to a hexadecimal string for the "%x" specifier
+    ├── ft_putnbr_base.c     //We need a function to convert a number to a hexadecimal string for the "%x, %X" specifiers
     └── ft_strlen.c
 ```
 
