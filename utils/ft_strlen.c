@@ -1,11 +1,10 @@
 #include "ft_printf.h"
 
-size_t ft_strlen(const char *s)
+size_t ft_strlen(const char *s) 
 {
-    size_t i;
+    const char *start; 
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+    start = s; 
+    while (*s++) 
+    return (s - start - 1); 
 }
